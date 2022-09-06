@@ -72,7 +72,6 @@ require 'user_agent/browsers/vivaldi'
 require 'user_agent/browsers/wechat_browser'
 require 'user_agent/browsers/windows_media_player'
 require 'user_agent/browsers/wondery'
-require 'user_agent/browsers/wondery_crawler'
 
 class UserAgent
   module Browsers
@@ -152,7 +151,6 @@ class UserAgent
       SoundOn,
       Spreaker,
       ThePodcastApp,
-      WonderyCrawler,
       Wondery,
       Android
     ].freeze

@@ -1,15 +1,28 @@
 # frozen_string_literal: true
 
+require 'set'
+
 class UserAgent
   module Browsers
+    # Browser is "Wondery" for:
     # wondery/android/v1.8.2/2314
     # Wondery/1660 CFNetwork/1183 Darwin/20.0.0
     # wondery/ios/v1.8.2/48
-    # wondery/ios/v1.4.2/1 ,AppleCoreMedia/1.0.0.17G64 (iPhone; U; CPU OS 13_6 like Mac OS X; en_us)
+    # wondery/ios/v1.4.2/1, AppleCoreMedia/1.0.0.17G64 (iPhone; U; CPU OS 13_6 like Mac OS X; en_us)
+    #
+    # Browser is "Wondery Crawler" for:
+    # wondery/develop
+    # wondery/development
+    # wondery/prod
+    # wondery/production
+    # wondery/stage
+    # wondery/staging
     class Wondery < Base
-      IOS_LOWER_REGEX = /ios/.freeze
-      WONDERY = 'Wondery'
-      WONDERY_REGEX = /[Ww]ondery/.freeze
+      IOS_LOWER_REGEX          = /ios/.freeze
+      WONDERY                  = 'Wondery'
+      WONDERY_CRAWLER          = 'Wondery Crawler'
+      WONDERY_CRAWLER_VERSIONS = Set.new(%w[develop development prod production stage staging]).freeze
+      WONDERY_REGEX            = /[Ww]ondery/.freeze
 
       ##
       # @param agent [Array]
@@ -21,17 +34,26 @@ class UserAgent
       end
 
       ##
+      # @return [Boolean]
+      #     true if this is a bot/crawler
+      def bot?
+        WONDERY_CRAWLER_VERSIONS.include?(version)
+      end
+
+      ##
       # @return [String]
       #     The browser name
       def browser
+        return WONDERY_CRAWLER if bot?
+
         WONDERY
       end
 
       ##
       # @return [Boolean]
-      #     This is a mobile app
+      #     true if this is a mobile app
       def mobile?
-        true
+        !bot?
       end
 
       # Gets the operating system
@@ -49,6 +71,8 @@ class UserAgent
       #
       # @return [String, nil] the platform
       def platform
+        return if bot?
+
         ua = to_s
 
         case ua
