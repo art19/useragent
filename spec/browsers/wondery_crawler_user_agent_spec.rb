@@ -3,7 +3,7 @@
 require 'user_agent'
 
 shared_examples 'Wondery Crawler' do |version, platform, os|
-  it "returns 'Wondery' as its browser" do
+  it "returns 'Wondery Crawler' as its browser" do
     expect(useragent.browser).to eq('Wondery Crawler')
   end
 
@@ -61,8 +61,8 @@ describe 'UserAgent: wondery/stage' do
   it_behaves_like 'Wondery Crawler', 'stage', nil, nil
 end
 
-describe 'UserAgent: wondery/a23xcax' do
-  let(:useragent) { UserAgent.parse('wondery/a23xcax') }
+describe 'UserAgent: wondery/not_crawler' do
+  let(:useragent) { UserAgent.parse('wondery/not_crawler') }
 
   it { expect(useragent.browser).not_to eq('Wondery Crawler') }
   it { expect(useragent).not_to be_bot }

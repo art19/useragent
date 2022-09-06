@@ -2,15 +2,12 @@
 
 class UserAgent
   module Browsers
-    # wondery/develop
-    # wondery/development
-    # wondery/prod
-    # wondery/production
-    # wondery/stage
-    # wondery/staging
+    # wondery/develop*
+    # wondery/prod*
+    # wondery/stag*
     class WonderyCrawler < Base
       WONDERY_CRAWLER       = 'Wondery Crawler'
-      WONDERY_CRAWLER_REGEX = /(develop(ment)?)|(stag)|stage|(prod(uction)?)/i.freeze
+      WONDERY_CRAWLER_REGEX = /\A(?:develop|prod|stag)/i.freeze
 
       ##
       # @param agent [Array]
