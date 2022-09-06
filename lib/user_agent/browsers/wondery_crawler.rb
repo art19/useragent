@@ -2,12 +2,12 @@
 
 class UserAgent
   module Browsers
-    # wondery/develop*
-    # wondery/prod*
-    # wondery/stag*
+    # wondery/develop
+    # wondery/production
+    # wondery/staging
     class WonderyCrawler < Base
-      WONDERY_CRAWLER       = 'Wondery Crawler'
-      WONDERY_CRAWLER_REGEX = /\A(?:develop|prod|stag)/i.freeze
+      WONDERY_CRAWLER          = 'Wondery Crawler'
+      WONDERY_CRAWLER_VERSIONS = %w[develop production staging].freeze
 
       ##
       # @param agent [Array]
@@ -16,7 +16,8 @@ class UserAgent
       #     True if the useragent matches this browser
       def self.extend?(agent)
         agent.detect do |ua|
-          UserAgent::Browsers::Wondery::WONDERY_REGEX.match?(ua.product) && WONDERY_CRAWLER_REGEX.match?(ua.version)
+          UserAgent::Browsers::Wondery::WONDERY_REGEX.match?(ua.product) &&
+            WONDERY_CRAWLER_VERSIONS.include?(ua.version)
         end
       end
 

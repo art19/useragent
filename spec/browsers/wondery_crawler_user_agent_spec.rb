@@ -31,18 +31,6 @@ describe 'UserAgent: wondery/develop' do
   it_behaves_like 'Wondery Crawler', 'develop', nil, nil
 end
 
-describe 'UserAgent: wondery/development' do
-  let(:useragent) { UserAgent.parse('wondery/development') }
-
-  it_behaves_like 'Wondery Crawler', 'development', nil, nil
-end
-
-describe 'UserAgent: wondery/prod' do
-  let(:useragent) { UserAgent.parse('wondery/prod') }
-
-  it_behaves_like 'Wondery Crawler', 'prod', nil, nil
-end
-
 describe 'UserAgent: wondery/production' do
   let(:useragent) { UserAgent.parse('wondery/production') }
 
@@ -53,12 +41,6 @@ describe 'UserAgent: wondery/staging' do
   let(:useragent) { UserAgent.parse('wondery/staging') }
 
   it_behaves_like 'Wondery Crawler', 'staging', nil, nil
-end
-
-describe 'UserAgent: wondery/stage' do
-  let(:useragent) { UserAgent.parse('wondery/stage') }
-
-  it_behaves_like 'Wondery Crawler', 'stage', nil, nil
 end
 
 describe 'UserAgent: wondery/not_crawler' do
