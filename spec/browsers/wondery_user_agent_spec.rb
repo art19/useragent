@@ -25,7 +25,7 @@ shared_examples 'Wondery' do |version, platform, os|
   it { expect(useragent).not_to be_bot }
 end
 
-shared_examples 'Wondery Crawler' do |version, platform, os|
+shared_examples 'Wondery Crawler' do |version|
   it "returns 'Wondery Crawler' as its browser" do
     expect(useragent.browser).to eq('Wondery Crawler')
   end
@@ -34,18 +34,12 @@ shared_examples 'Wondery Crawler' do |version, platform, os|
     expect(useragent.version).to eq(version)
   end
 
-  it "returns '#{platform}' as its platform" do
-    expect(useragent.platform).to eq(platform)
-  end
-
-  it "returns '#{os}' as its operating system" do
-    expect(useragent.os).to eq(os)
-  end
-
   it { expect(useragent).to be_bot }
   it { expect(useragent).not_to be_mobile }
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
+  it { expect(useragent.os).to be_nil }
+  it { expect(useragent.platform).to be_nil }
 end
 
 describe "UserAgent: wondery/android/v1.8.2/2314" do
@@ -75,37 +69,37 @@ end
 describe 'UserAgent: wondery/develop' do
   let(:useragent) { UserAgent.parse('wondery/develop') }
 
-  it_behaves_like 'Wondery Crawler', 'develop', nil, nil
+  it_behaves_like 'Wondery Crawler', 'develop'
 end
 
 describe 'UserAgent: wondery/development' do
   let(:useragent) { UserAgent.parse('wondery/development') }
 
-  it_behaves_like 'Wondery Crawler', 'development', nil, nil
+  it_behaves_like 'Wondery Crawler', 'development'
 end
 
 describe 'UserAgent: wondery/prod' do
   let(:useragent) { UserAgent.parse('wondery/prod') }
 
-  it_behaves_like 'Wondery Crawler', 'prod', nil, nil
+  it_behaves_like 'Wondery Crawler', 'prod'
 end
 
 describe 'UserAgent: wondery/production' do
   let(:useragent) { UserAgent.parse('wondery/production') }
 
-  it_behaves_like 'Wondery Crawler', 'production', nil, nil
+  it_behaves_like 'Wondery Crawler', 'production'
 end
 
 describe 'UserAgent: wondery/staging' do
   let(:useragent) { UserAgent.parse('wondery/staging') }
 
-  it_behaves_like 'Wondery Crawler', 'staging', nil, nil
+  it_behaves_like 'Wondery Crawler', 'staging'
 end
 
 describe 'UserAgent: wondery/stage' do
   let(:useragent) { UserAgent.parse('wondery/stage') }
 
-  it_behaves_like 'Wondery Crawler', 'stage', nil, nil
+  it_behaves_like 'Wondery Crawler', 'stage'
 end
 
 describe 'UserAgent: wondery/not_crawler' do
