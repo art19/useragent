@@ -1,3 +1,9 @@
+# 1.5.0
+* Add browser support for Wondery Crawler
+
+# 1.4.0
+* Add browser support for Amazon Echo
+
 # 1.3.0
 * Add browser support for AndroidDownloadManager, AudioClip, BeyondPod, Breaker, Castro, Deezer, Downcast, Googlebot, Himalaya, iCatcher!, Luminary, NPR One, PodMN, Podcast Republic, Podimo, Podkicker, Podverse, RadioPublic, SoundOn, Spreaker
 

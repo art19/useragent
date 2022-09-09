@@ -81,6 +81,8 @@ class UserAgent
       'I' => :weak
     }.freeze
 
+    ##
+    # Since we pick the first matching user agent, the listing order of these user agents are important!
     ALL = [
       Edge,
       Samsung,
