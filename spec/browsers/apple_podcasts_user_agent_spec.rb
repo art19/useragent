@@ -158,3 +158,8 @@ describe "Podcast/22 CFNetwork/978.0.7 Darwin/18.6.0" do
   it_behaves_like 'Apple Podcasts with details', '22', 'iOS', 'iOS 12.3.x'
 end
 
+describe "%E3%83%9D%E3%83%83%E3%83%89%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88/1709.2.2 CFNetwork/1390 Darwin/22.0.0" do 
+  let!(:useragent) { UserAgent.parse("%E3%83%9D%E3%83%83%E3%83%89%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88/1709.2.2 CFNetwork/1390 Darwin/22.0.0") }
+  it_behaves_like 'Apple Podcasts with details', '1709.2.2', 'iOS', 'iOS 16.2'
+end 
+
