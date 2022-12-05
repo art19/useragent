@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3.9.0'
   s.add_development_dependency 'yard',  '~> 0.9.19'
 
-  s.authors = ['Joshua Peek', 'Garry Shutler', 'Keith Gable', 'Siu Kit Wong', 'Louise Yang', 'Johannes Vetter']
-  s.email   = ['garry@robustsoftware.co.uk', 'keith@art19.com', 'kit@art19.com', 'louise@art19.com', 'johannes@art19.com']
+  s.authors = ['Joshua Peek', 'Garry Shutler', 'Keith Gable', 'Siu Kit Wong', 'Liam Bailey', 'Louise Yang', 'Johannes Vetter']
+  s.email   = ['garry@robustsoftware.co.uk', 'keith@art19.com', 'kit@art19.com', 'liambly@amazon.com', 'louise@art19.com', 'johannes@art19.com']
   s.license = 'MIT'
 end

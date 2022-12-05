@@ -1,3 +1,7 @@
+# 1.5.1
+* Add support for Apple Podcasts agent ポッドキャスト. 
+* Updated Operating Systems mappings `Darwin` and `Android`
+
 # 1.5.0
 * Add browser support for Wondery Crawler
 
