@@ -28,7 +28,7 @@ class UserAgent
 
       APPLE_PODCASTS       = 'Apple Podcasts'
       APPLE_PODCASTS_REGEX = /\A(
-        # ca, da, de, el, en_AU, en_GB, en, es_419, es, fr, id, it, ja, ms, nl, pt_PT, vi, zh_HK, zh_TW
+        # ca, da, de, el, en_AU, en_GB, en, es_419, es, fr, id, it, ms, nl, pt_PT, vi, zh_HK, zh_TW
         Podcast(s?)
         # ar
         |البودكاست|%D8%A7%D9%84%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA
@@ -40,6 +40,8 @@ class UserAgent
         |פודקאסטים|%D7%A4%D7%95%D7%93%D7%A7%D7%90%D7%A1%D7%98%D7%99%D7%9D
         # hi
         |पॉडकास्ट|%E0%A4%AA%E0%A5%89%E0%A4%A1%E0%A4%95%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%9F
+        # ja 
+        |ポッドキャスト|%E3%83%9D%E3%83%83%E3%83%89%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88
         # ko
         |팟캐스트|%ED%8C%9F%EC%BA%90%EC%8A%A4%ED%8A%B8
         # no
