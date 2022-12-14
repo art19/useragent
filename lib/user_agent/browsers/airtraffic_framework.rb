@@ -122,7 +122,6 @@ class UserAgent
         detect_product(DARWIN)
       end
 
-
       ##
       # @return [String]
       # The Macintosh OS [macOS], with version if found
