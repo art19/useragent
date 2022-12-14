@@ -40,12 +40,6 @@ describe UserAgent::Browsers::AirTrafficFramework do
     it { expect(user_agent).to be_mobile }
   end
 
-  shared_examples 'a browser on an Apple TV / tvOS' do |os_version|
-    it { expect(user_agent.os).to eq ['tvOS', os_version].compact.join(' ') }
-    it { expect(user_agent.platform).to eql 'Apple TV' }
-    it { expect(user_agent).not_to be_mobile }
-  end
-
   context 'with "(null)/(null) watchOS/5.0 model/Watch2 ,7 hwp/t8002 build/16R349 (6; dt:149)"' do
     let(:ua_string) { '(null)/(null) watchOS/5.0 model/Watch2 ,7 hwp/t8002 build/16R349 (6; dt:149)' }
 
@@ -172,52 +166,7 @@ describe UserAgent::Browsers::AirTrafficFramework do
     let(:ua_string) { 'atc/2.0 AppleTV/4.1' }
 
     it_behaves_like 'an ATC browser', '2.0'
-    it_behaves_like 'a browser on an Apple TV / tvOS', '4.1'
-  end
-
-  context 'with "atc/2.0 AppleTV Darwin/18.2.0"' do
-    let(:ua_string) { 'atc/2.0 AppleTV Darwin/18.2.0' }
-
-    it_behaves_like 'an ATC browser', '2.0'
-    it_behaves_like 'a browser on an Apple TV / tvOS', '12.1'
-  end
-
-  context 'with "atc AppleTV"' do
-    let(:ua_string) { "atc Apple TV" }
-
-    it_behaves_like 'an ATC browser', nil
-    it_behaves_like 'a browser on an Apple TV / tvOS', nil
-  end
-
-  # space-delimited AppleTV user agents may occur rarely;
-  # we accept the loss of version information for these cases
-  context 'with "atc Apple TV 12.2 build/18R20"' do
-    let(:ua_string) { 'atc/1.0 Apple TV 12.2 build/18R20'}
-
-    it_behaves_like 'an ATC browser', '1.0.18R20'
-    it_behaves_like 'a browser on an Apple TV / tvOS', nil
-  end
-
-  # Another space-delimited AppleTV user agent;
-  # we accept the loss of version information for these cases
-  context 'with "atc Apple TV/12.2 build/18R20"' do
-    let(:ua_string) { 'atc/1.0 Apple TV 12.2 build/18R20'}
-
-    it_behaves_like 'an ATC browser', '1.0.18R20'
-    it_behaves_like 'a browser on an Apple TV / tvOS', nil
-  end
-
-  context 'with "atc/2.1 tvOS/11.3"' do
-    let(:ua_string) { "atc/2.1 tvOS/11.3"}
-
-    it_behaves_like 'an ATC browser', '2.1'
-    it_behaves_like 'a browser on an Apple TV / tvOS', '11.3'
-  end
-
-  context 'with "tvOS/11.3"' do
-    let(:ua_string) { "tvOS/11.3" }
-
-    it { expect(user_agent.browser).not_to eql 'AirTraffic.framework' }
+    it_behaves_like 'a browser on unknown OS'
   end
 
   context 'with "atc/1.0 Darwin/22.0.0' do

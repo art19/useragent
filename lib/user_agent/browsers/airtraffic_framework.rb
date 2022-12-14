@@ -49,8 +49,6 @@ class UserAgent
       #    The operating system with the detected version of the product
       def os
         case platform
-        when APPLE_TV
-          apple_tv_os
         when APPLE_WATCH
           apple_watch_os
         when MACINTOSH
@@ -65,8 +63,6 @@ class UserAgent
       def platform
         ua = to_s
         case ua
-        when APPLE_TV_REGEX, TVOS_REGEX
-          APPLE_TV
         when APPLE_WATCH_REGEX, WATCH_OS_REGEX
           APPLE_WATCH
         when IOS_REGEX
@@ -93,19 +89,6 @@ class UserAgent
       end
 
       private
-
-      ##
-      # @return [String]
-      #    The Apple TV OS, with version if found
-      def apple_tv_os
-        darwin_app = darwin_application
-        if darwin_app && darwin_app.version
-          [TVOS, OperatingSystems::Darwin::TV_OS[darwin_app.version.to_s]].compact.join(' ')
-        else
-          ua = detect_product(APPLE_TV) || detect_product(APPLETV) || detect_product(TVOS)
-          "#{TVOS} #{ua&.version}".strip
-        end
-      end
 
       ##
       # @return [String]

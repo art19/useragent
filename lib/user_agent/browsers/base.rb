@@ -6,8 +6,6 @@ class UserAgent
       include Comparable
 
       ANDROID           = 'Android'
-      APPLETV           = 'AppleTV'
-      APPLE_TV          = 'Apple TV'
       APPLE_WATCH       = 'Apple Watch'
       DALVIK            = 'Dalvik'
       DARWIN            = 'Darwin'
@@ -22,14 +20,12 @@ class UserAgent
       MAC_OS            = 'macOS'
       MOZILLA           = 'Mozilla'
       OSX               = 'OSX'
-      TVOS              = 'tvOS'
       WATCH_OS          = 'watchOS'
       WINDOWS           = 'Windows'
       X11               = 'X11'
 
       ANDROID_IOS_REGEX = /(Android|iOS)/.freeze
       ANDROID_REGEX     = /[Aa]ndroid/.freeze
-      APPLE_TV_REGEX    = /[Aa]pple ?[Tt][Vv]/.freeze
       APPLE_WATCH_REGEX = /Apple Watch/.freeze
       DARWIN_REGEX      = /Darwin/.freeze
       IOS_REGEX         = /iOS/.freeze
@@ -38,8 +34,7 @@ class UserAgent
       IPOD_REGEX        = /iPod/.freeze
       MACINTOSH_REGEX   = /Macintosh/.freeze
       OS_X_REGEX        = /OS X/.freeze
-      TVOS_REGEX        = /tvOS/.freeze
-      WATCH_OS_REGEX = /watchOS/.freeze
+      WATCH_OS_REGEX    = /watchOS/.freeze
       WINDOWS_NT_REGEX  = /Windows NT/.freeze
       WINDOWS_REGEX     = /Windows/.freeze
       X11_REGEX         = /X11/.freeze
