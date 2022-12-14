@@ -6,7 +6,7 @@ class UserAgent
     # This class detects and handles the ATC browser on Apple Watch
     class AirTrafficFramework < Base
       # The browser string
-      BROWSER = 'AirTraffic.framework'
+      BROWSER = 'atc'
 
       # The build within the comment
       BUILD = 'build'

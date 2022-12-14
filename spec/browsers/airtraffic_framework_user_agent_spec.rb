@@ -6,7 +6,7 @@ describe UserAgent::Browsers::AirTrafficFramework do
   let(:user_agent) { UserAgent.parse(ua_string) }
 
   shared_examples 'an ATC browser' do |version = nil|
-    it { expect(user_agent.browser).to eql 'AirTraffic.framework' }
+    it { expect(user_agent.browser).to eql 'atc' }
     it { expect(user_agent).not_to be_bot }
     #it { expect(user_agent).to be_mobile }
     #it { expect(user_agent.platform).to eql 'Apple Watch' }
