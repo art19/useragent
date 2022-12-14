@@ -38,13 +38,6 @@ class UserAgent
       end
 
       ##
-      # @return [Array]
-      #     Gets DARWIN product informaton
-      def darwin_application
-        detect_product(DARWIN)
-      end
-
-      ##
       # @return [Boolean]
       #    This is mobile when platform is iOS or Apple Watch
       def mobile?
@@ -57,30 +50,13 @@ class UserAgent
       def os
         case platform
         when APPLE_TV
-          darwin_app = darwin_application
-          if darwin_app && darwin_app.version
-            [TVOS, OperatingSystems::Darwin::TV_OS[darwin_app.version.to_s]].compact.join(' ')
-          else
-            ua = detect_product(APPLE_TV) || detect_product(APPLETV) || detect_product(TVOS)
-            "#{TVOS} #{ua&.version}".strip
-          end
+          apple_tv_os
         when APPLE_WATCH
-          ua = detect_product(WATCH_OS)
-          "#{WATCH_OS} #{ua&.version}".strip
+          apple_watch_os
         when MACINTOSH
-          darwin_app = darwin_application
-          if darwin_app && darwin_app.version
-            [MAC_OS, OperatingSystems::Darwin::MAC_OS[darwin_app.version.to_s]].compact.join(' ')
-          else
-            MAC_OS
-          end
+          macintosh_os
         when IOS
-          darwin_app = darwin_application
-          if darwin_app && darwin_app.version
-            [IOS, OperatingSystems::Darwin::IOS[darwin_app.version.to_s]].compact.join(' ')
-          else
-            IOS
-          end
+          ios_os
         end
       end
 
@@ -114,6 +90,61 @@ class UserAgent
         return atc_version unless atc_version && build_version
 
         UserAgent::Version.new("#{atc_version}.#{build_version}")
+      end
+
+      private
+
+      ##
+      # @return [String]
+      #    The Apple TV OS, with version if found
+      def apple_tv_os
+        darwin_app = darwin_application
+        if darwin_app && darwin_app.version
+          [TVOS, OperatingSystems::Darwin::TV_OS[darwin_app.version.to_s]].compact.join(' ')
+        else
+          ua = detect_product(APPLE_TV) || detect_product(APPLETV) || detect_product(TVOS)
+          "#{TVOS} #{ua&.version}".strip
+        end
+      end
+
+      ##
+      # @return [String]
+      #    The Apple Watch OS, with version if found
+      def apple_watch_os
+        ua = detect_product(WATCH_OS)
+        "#{WATCH_OS} #{ua&.version}".strip
+      end
+
+      ##
+      # @return [Array]
+      #     Gets DARWIN product informaton
+      def darwin_application
+        detect_product(DARWIN)
+      end
+
+
+      ##
+      # @return [String]
+      # The Macintosh OS [macOS], with version if found
+      def macintosh_os
+        darwin_app = darwin_application
+        if darwin_app && darwin_app.version
+          [MAC_OS, OperatingSystems::Darwin::MAC_OS[darwin_app.version.to_s]].compact.join(' ')
+        else
+          MAC_OS
+        end
+      end
+
+      ##
+      # @return [String]
+      # iOS, with version if found
+      def ios_os
+        darwin_app = darwin_application
+        if darwin_app && darwin_app.version
+          [IOS, OperatingSystems::Darwin::IOS[darwin_app.version.to_s]].compact.join(' ')
+        else
+          IOS
+        end
       end
     end
   end
