@@ -5,6 +5,7 @@ require 'user_agent/browsers/webkit'
 
 require 'user_agent/browsers/acast'
 require 'user_agent/browsers/airr'
+require 'user_agent/browsers/airtraffic_framework'
 require 'user_agent/browsers/alexa'
 require 'user_agent/browsers/amazon_echo'
 require 'user_agent/browsers/amazon_music'
@@ -13,8 +14,6 @@ require 'user_agent/browsers/android_download_manager'
 require 'user_agent/browsers/apple_core_media'
 require 'user_agent/browsers/apple_home_pod'
 require 'user_agent/browsers/apple_podcasts'
-require 'user_agent/browsers/apple_watch/base'
-require 'user_agent/browsers/apple_watch/atc'
 require 'user_agent/browsers/audible'
 require 'user_agent/browsers/audio_clip'
 require 'user_agent/browsers/beyond_pod'
@@ -134,7 +133,7 @@ class UserAgent
       AppleCoreMedia,
       Libavformat,
       OkHttp,
-      AppleWatch::ATC,
+      AirTrafficFramework,
       Pod2Watch,
       ApplePodcasts,
       AndroidDownloadManager,
