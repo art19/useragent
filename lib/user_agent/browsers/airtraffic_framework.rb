@@ -4,6 +4,7 @@ class UserAgent
   module Browsers
     ##
     # This class detects and handles the ATC browser on Apple Watch
+    # Note: the `atc/` User Agent is a daemon in the private Apple framework AirTraffic.framework
     class AirTrafficFramework < Base
       # The browser string
       BROWSER = 'atc'
