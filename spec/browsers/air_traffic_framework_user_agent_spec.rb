@@ -20,19 +20,19 @@ describe UserAgent::Browsers::AirTrafficFramework do
     it { expect(user_agent.os).to be_nil}
   end
 
-  shared_examples 'a browser on Apple Watch / watchOS' do |os_version|
+  shared_examples 'a browser on Apple Watch / watchOS' do |os_version = nil|
     it { expect(user_agent.os).to eql ['watchOS', os_version].compact.join(' ') }
     it { expect(user_agent.platform).to eql 'Apple Watch' }
     it { expect(user_agent).to be_mobile }
   end
 
-  shared_examples 'a browser on Macintosh / macOS' do |os_version|
+  shared_examples 'a browser on Macintosh / macOS' do |os_version = nil|
     it { expect(user_agent.os).to eq ['macOS', os_version].compact.join(' ') }
     it { expect(user_agent.platform).to eql 'Macintosh' }
     it { expect(user_agent).not_to be_mobile }
   end
 
-  shared_examples 'a browser on an iOS device' do |os_version|
+  shared_examples 'a browser on an iOS device' do |os_version = nil|
     it { expect(user_agent.os).to eq ['iOS', os_version].compact.join(' ') }
     it { expect(user_agent.platform).to eql 'iOS' }
     it { expect(user_agent).to be_mobile }
@@ -41,7 +41,7 @@ describe UserAgent::Browsers::AirTrafficFramework do
   context 'with "(null)/(null) watchOS/5.0 model/Watch2 ,7 hwp/t8002 build/16R349 (6; dt:149)"' do
     let(:ua_string) { '(null)/(null) watchOS/5.0 model/Watch2 ,7 hwp/t8002 build/16R349 (6; dt:149)' }
 
-    it_behaves_like 'an ATC browser', nil
+    it_behaves_like 'an ATC browser'
     it_behaves_like 'a browser on Apple Watch / watchOS', '5.0'
   end
 
@@ -67,7 +67,7 @@ describe UserAgent::Browsers::AirTrafficFramework do
     let(:ua_string) { 'atc/1.0 watchOS model/Watch3 ,1 hwp/t8004 build/17R90 (6; dt:153)' }
 
     it_behaves_like 'an ATC browser', '1.0.17R90'
-    it_behaves_like 'a browser on Apple Watch / watchOS', nil
+    it_behaves_like 'a browser on Apple Watch / watchOS'
   end
 
   context 'with "atc/1.0 watchOS/6.0 model/Watch3 ,1 hwp/t8004"' do
@@ -80,21 +80,21 @@ describe UserAgent::Browsers::AirTrafficFramework do
   context 'with "atc watchOS"' do
     let(:ua_string) { 'atc watchOS' }
 
-    it_behaves_like 'an ATC browser', nil
-    it_behaves_like 'a browser on Apple Watch / watchOS', nil
+    it_behaves_like 'an ATC browser'
+    it_behaves_like 'a browser on Apple Watch / watchOS'
   end
 
   context 'with "atc watchOS build/19R150"' do
     let(:ua_string) { 'atc watchOS build/19R150' }
 
     it_behaves_like 'an ATC browser', '.19R150'
-    it_behaves_like 'a browser on Apple Watch / watchOS', nil
+    it_behaves_like 'a browser on Apple Watch / watchOS'
   end
 
   context 'with "atc/"' do
     let(:ua_string) { 'atc/' }
 
-    it_behaves_like 'an ATC browser', nil
+    it_behaves_like 'an ATC browser'
     it_behaves_like 'a browser on unknown OS'
   end
 
@@ -137,14 +137,14 @@ describe UserAgent::Browsers::AirTrafficFramework do
     let(:ua_string) { 'atc/1.1 Darwin (x86_64)' }
 
     it_behaves_like 'an ATC browser', '1.1'
-    it_behaves_like 'a browser on Macintosh / macOS', nil
+    it_behaves_like 'a browser on Macintosh / macOS'
   end
 
   context 'with "atc Darwin (x86_64)"' do
     let(:ua_string) { 'atc Darwin (x86_64)' }
 
-    it_behaves_like 'an ATC browser', nil
-    it_behaves_like 'a browser on Macintosh / macOS', nil
+    it_behaves_like 'an ATC browser'
+    it_behaves_like 'a browser on Macintosh / macOS'
   end
 
   context 'with "atc/ build/17R50 Darwin/21.5.0 (x86_64)"' do
@@ -177,8 +177,8 @@ describe UserAgent::Browsers::AirTrafficFramework do
   context 'with "atc Darwin"' do
     let(:ua_string) { "atc Darwin" }
 
-    it_behaves_like 'an ATC browser', nil
-    it_behaves_like 'a browser on an iOS device', nil
+    it_behaves_like 'an ATC browser'
+    it_behaves_like 'a browser on an iOS device'
   end
 
   context 'with "Darwin"' do
