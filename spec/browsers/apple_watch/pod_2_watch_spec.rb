@@ -2,7 +2,7 @@
 
 require 'user_agent'
 
-describe UserAgent::Browsers::Pod2Watch do
+describe UserAgent::Browsers::AppleWatch::Pod2Watch do
   let(:user_agent) { UserAgent.parse(ua_string) }
 
   shared_examples 'a Pod2Watch browser on watchOS' do |os_version = nil, version = nil|
