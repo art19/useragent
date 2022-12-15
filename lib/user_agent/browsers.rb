@@ -5,7 +5,7 @@ require 'user_agent/browsers/webkit'
 
 require 'user_agent/browsers/acast'
 require 'user_agent/browsers/airr'
-require 'user_agent/browsers/airtraffic_framework'
+require 'user_agent/browsers/air_traffic_framework'
 require 'user_agent/browsers/alexa'
 require 'user_agent/browsers/amazon_echo'
 require 'user_agent/browsers/amazon_music'
