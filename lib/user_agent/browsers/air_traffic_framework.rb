@@ -101,7 +101,7 @@ class UserAgent
 
       ##
       # @return [Array]
-      #     Gets DARWIN product informaton
+      #     Gets DARWIN product information
       def darwin_application
         detect_product(DARWIN)
       end
