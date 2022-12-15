@@ -22,7 +22,7 @@ class UserAgent
       # Check if this class is usable for at least one of the provided user agents
       #
       # @param agents [UserAgent::Browsers::Base]
-      #     List of user agents to figure out if it could be an ATC browser on Apple Watch
+      #     List of user agents to figure out if it could be an ATC browser
       #
       # @return [Boolean]
       #     true, if this is the right class for the user agent

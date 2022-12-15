@@ -8,15 +8,6 @@ class UserAgent
       # The Pod2Watch browser
       BROWSER = 'Pod2Watch'
 
-      # The darwin product (providing a kernel version)
-      DARWIN = 'Darwin'
-
-      # The Operating System
-      WATCH_OS = 'watchOS'
-
-      # The platform for browsers on Apple Watch
-      PLATFORM = 'Apple Watch'
-
       ##
       # Check if this class is usable for at least one of the provided user agents
       #
@@ -68,7 +59,7 @@ class UserAgent
       ##
       # @return [String] The platform
       def platform
-        PLATFORM
+        APPLE_WATCH
       end
 
       ##
