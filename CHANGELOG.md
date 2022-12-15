@@ -1,5 +1,9 @@
+# 1.5.2
+* Eliminated Apple Watch base class; pod_2_watch is now a standalone UserAgent
+* ATC > AirTrafficFramework is now a standalone user agent, and attempts to capture information about non-Apple Watch OSes
+
 # 1.5.1
-* Add support for Apple Podcasts agent ポッドキャスト. 
+* Add support for Apple Podcasts agent ポッドキャスト.
 * Updated Operating Systems mappings `Darwin` and `Android`
 
 # 1.5.0
