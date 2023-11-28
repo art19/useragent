@@ -1,7 +1,7 @@
 # 1.5.3
 * Updated Operating Systems mappings `Darwin` and `Android`
 
-# 1.5.2 (rolled back)
+# 1.5.2
 * Eliminated Apple Watch base class; pod_2_watch is now a standalone UserAgent
 * ATC > AirTrafficFramework is now a standalone user agent, and attempts to capture information about non-Apple Watch OSes
 
