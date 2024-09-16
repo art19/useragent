@@ -1,3 +1,6 @@
+# 1.5.4
+* Updated Operating Systems mappings `Darwin`
+
 # 1.5.3
 * Updated Operating Systems mappings `Darwin` and `Android`
 
