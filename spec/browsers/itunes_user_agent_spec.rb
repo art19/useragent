@@ -8,6 +8,12 @@ shared_examples "iTunes" do
   it "should return nil as its security" do
     expect(@useragent.security).to be_nil
   end
+
+  it { expect(@useragent).to be_desktop }
+  it { expect(@useragent).not_to be_mobile }
+  it { expect(@useragent).not_to be_speaker }
+  it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 shared_examples "iTunes runs on" do |platform, os|

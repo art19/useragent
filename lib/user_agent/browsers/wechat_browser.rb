@@ -9,6 +9,10 @@ class UserAgent
         'Wechat Browser'
       end
 
+      def web_browser?
+        true
+      end
+
       def version
         micro_messenger = detect_product("MicroMessenger")
         Version.new(micro_messenger.version)

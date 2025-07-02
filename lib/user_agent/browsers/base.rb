@@ -32,6 +32,10 @@ class UserAgent
         application && application.product
       end
 
+      def web_browser?
+        false
+      end
+
       def version
         application && application.version
       end

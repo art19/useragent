@@ -19,6 +19,10 @@ class UserAgent
         webkit.version
       end
 
+      def web_browser?
+        true
+      end
+
       # Prior to Safari 3, the user agent did not include a version number
       def version
         str = if detect_product("CriOs")

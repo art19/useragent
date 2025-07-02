@@ -8,6 +8,21 @@ shared_examples_for "Opera browser" do
   it "should return a Version object for version" do
     expect(@useragent.version).to be_a(UserAgent::Version)
   end
+
+  if type == :desktop
+    it { expect(@useragent).to be_desktop }
+    it { expect(@useragent).not_to be_mobile }
+  elsif type == :mobile
+    it { expect(@useragent).to be_mobile }
+    it { expect(@useragent).not_to be_desktop }
+  else
+    it { expect(@useragent).not_to be_mobile }
+    it { expect(@useragent).not_to be_desktop }
+  end
+
+  it { expect(@useragent).not_to be_speaker }
+  it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).to be_web_browser }
 end
 
 # http://www.useragentstring.com/Opera12.14_id_19612.php

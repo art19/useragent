@@ -20,6 +20,10 @@ class UserAgent
         "Internet Explorer"
       end
 
+      def web_browser?
+        true
+      end
+
       def version
         str = application.comment.join('; ')[/(MSIE\s|rv:)([\d\.]+)/, 2]
         Version.new(str)

@@ -10,6 +10,22 @@ shared_examples_for "Safari browser" do
   end
 end
 
+shared_examples 'a desktop' do
+  it { expect(@useragent).to be_desktop }
+  it { expect(@useragent).not_to be_mobile }
+  it { expect(@useragent).not_to be_speaker }
+  it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).to be_web_browser }
+end
+
+shared_examples 'a mobile' do
+  it { expect(@useragent).to be_mobile }
+  it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).not_to be_speaker }
+  it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).to be_web_browser }
+end
+
 describe "UserAgent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16" do
   before do
     @useragent = UserAgent.parse("Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16")

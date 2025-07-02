@@ -17,9 +17,11 @@ shared_examples 'Podcast Addict' do
     expect(@useragent.security).to eq(:strong)
   end
 
-  it 'is a mobile user agent' do
-    expect(@useragent.mobile?).to be true
-  end
+  it { expect(useragent).to be_mobile }
+  it { expect(useragent).not_to be_desktop }
+  it { expect(useragent).not_to be_speaker }
+  it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Podcast Addict - Dalvik/1.6.0 (Linux; U; Android 4.4.2; LG-D631 Build/KOT49I.D63110b)" do

@@ -1,5 +1,21 @@
 require 'user_agent'
 
+shared_examples 'a desktop' do
+  it { expect(@useragent).to be_desktop }
+  it { expect(@useragent).not_to be_mobile }
+  it { expect(@useragent).not_to be_speaker }
+  it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
+end
+
+shared_examples 'a mobile' do
+  it { expect(@useragent).to be_mobile }
+  it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).not_to be_speaker }
+  it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
+end
+
 shared_examples "Windows Media Player" do
   it "should return 'Windows Media Player' as its browser" do
     expect(@useragent.browser).to eq("Windows Media Player")

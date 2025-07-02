@@ -23,6 +23,10 @@ class UserAgent
         OperatingSystems.normalize_os(os_comment)
       end
 
+      def web_browser?
+        true
+      end
+
       private
 
       def os_comment

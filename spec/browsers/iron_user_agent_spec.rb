@@ -10,6 +10,14 @@ shared_examples_for "Iron browser" do
   end
 end
 
+shared_examples 'a desktop' do
+  it { expect(@useragent).to be_desktop }
+  it { expect(@useragent).not_to be_mobile }
+  it { expect(@useragent).not_to be_speaker }
+  it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).to be_web_browser }
+end
+
 # http://www.useragentstring.com/Iron22.0.2150.0_id_19368.php
 describe "UserAgent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1250.0 Iron/22.0.2150.0 Safari/537.4'" do
   before do

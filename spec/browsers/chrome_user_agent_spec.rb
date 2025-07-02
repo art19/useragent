@@ -4,6 +4,31 @@ shared_examples_for "Chrome browser" do
   it "should return 'Chrome' as its browser" do
     expect(@useragent.browser).to eq("Chrome")
   end
+
+  it "should return '#{version}' as its version" do
+    expect(useragent.version).to eq(version)
+  end
+
+  it "should return '#{platform}' as its platform" do
+    expect(useragent.platform).to eq(platform)
+  end
+
+  it "should return '#{os}' as its os" do
+    expect(useragent.os).to eq(os)
+  end
+
+  if type == :desktop
+    it { expect(useragent).to be_desktop }
+    it { expect(useragent).not_to be_mobile }
+    it { expect(useragent).not_to be_bot }
+  elsif type == :mobile
+    it { expect(useragent).to be_mobile }
+    it { expect(useragent).not_to be_desktop }
+    it { expect(useragent).not_to be_bot }
+  end
+
+  it { expect(useragent).not_to be_speaker }
+  it { expect(useragent).to be_web_browser }
 end
 
 # http://www.useragentstring.com/Chrome30.0.1599.17_id_19721.php
