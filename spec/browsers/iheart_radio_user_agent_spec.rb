@@ -23,6 +23,7 @@ shared_examples_for 'iHeartRadio' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: iHeartRadio/1 CFNetwork/1098.6 Darwin/19.0.0" do

@@ -29,6 +29,7 @@ shared_examples 'Spotify' do |version, platform, os, type|
 
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Spotify/0.1.118.48 Android/29 (Pixel 4 XL)" do

@@ -30,6 +30,8 @@ shared_examples 'Amazon Music' do |version, platform, os, type|
     it { expect(useragent).not_to be_speaker }
     it { expect(useragent).not_to be_bot }
   end
+
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: AmazonMusic/17.7.2 Mozilla/5.0 (Linux; Android 8.1.0; 5059X Build/O11019; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/64.0.3282.137 Mobile Safari/537.36" do

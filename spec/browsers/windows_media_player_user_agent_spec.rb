@@ -7,6 +7,7 @@ shared_examples 'a desktop' do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 shared_examples 'a mobile' do
@@ -14,6 +15,7 @@ shared_examples 'a mobile' do
   it { expect(@useragent).not_to be_desktop }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 shared_examples "Windows Media Player" do

@@ -15,6 +15,10 @@ class UserAgent
         'Opera'
       end
 
+      def web_browser?
+        true
+      end
+
       def version
         if mini?
           Version.new(application.comment.detect{|c| c =~ /Opera Mini/}[/Opera Mini\/([\d\.]+)/, 1]) rescue Version.new

@@ -17,6 +17,7 @@ shared_examples 'a desktop' do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).to be_web_browser }
 end
 
 shared_examples 'a mobile' do
@@ -24,6 +25,7 @@ shared_examples 'a mobile' do
   it { expect(@useragent).not_to be_desktop }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).to be_web_browser }
 end
 
 describe 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:2.0b8) Gecko/20100101 Firefox/4.0b8' do

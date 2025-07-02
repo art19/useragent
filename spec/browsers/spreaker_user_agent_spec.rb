@@ -23,6 +23,7 @@ shared_examples_for 'Spreaker' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Spreaker for Android 4.17.0 release:2021-05-05 device:phone (samsung SM-G965U; Android 10; en_US)" do

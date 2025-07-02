@@ -24,6 +24,7 @@ shared_examples_for "Opera browser" do |type|
 
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(useragent).to be_web_browser }
 end
 
 # http://www.useragentstring.com/Opera12.14_id_19612.php

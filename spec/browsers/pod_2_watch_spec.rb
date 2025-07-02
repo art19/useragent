@@ -11,6 +11,7 @@ describe UserAgent::Browsers::Pod2Watch do
     it { expect(user_agent).to be_mobile }
     it { expect(user_agent.os).to eql ['watchOS', os_version].compact.join(' ') }
     it { expect(user_agent.platform).to eql 'Apple Watch' }
+    it { expect(useragent).not_to be_web_browser }
 
     if version
       it { expect(user_agent.version.to_s).to eql version }

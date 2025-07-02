@@ -29,6 +29,7 @@ shared_examples 'TuneIn' do |version, platform, os, type|
 
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: TuneIn Radio/26.8.1 (Linux;Android 8.0.0) ExoPlayerLib/2.12.2" do

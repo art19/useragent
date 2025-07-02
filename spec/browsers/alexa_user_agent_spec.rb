@@ -30,6 +30,8 @@ shared_examples 'Alexa' do |version, os, type|
     it { expect(useragent).not_to be_speaker }
     it { expect(useragent).not_to be_bot }
   end
+
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: AlexaMediaPlayer/1.0.1560.0 (Linux;Android 10) ExoPlayerLib/1.5.9" do

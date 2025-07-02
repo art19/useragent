@@ -30,6 +30,7 @@ shared_examples 'Chrome browser' do |version, platform, os, type|
   end
 
   it { expect(useragent).not_to be_speaker }
+  it { expect(useragent).to be_web_browser }
 end
 
 # http://www.useragentstring.com/Chrome30.0.1599.17_id_19721.php

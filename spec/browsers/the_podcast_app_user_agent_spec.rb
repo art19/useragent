@@ -23,6 +23,7 @@ shared_examples 'ThePodcastApp' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: ThePodcastApp/5.6.1 (iPhone; iOS 14.6; ) player (build 4958; +https://podcast.app/)" do

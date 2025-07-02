@@ -29,6 +29,7 @@ shared_examples 'Overcast' do |version, platform, os, type|
 
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Overcast/3.0 (+http://overcast.fm/; iOS podcast app) BMID/E6793162B9" do

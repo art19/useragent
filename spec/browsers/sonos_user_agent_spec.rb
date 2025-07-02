@@ -20,6 +20,7 @@ shared_examples 'Sonos' do |version|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_mobile }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Linux UPnP/1.0 Sonos/44.2-53100-mainline_integ (ZPS120)" do

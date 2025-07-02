@@ -39,6 +39,10 @@ class UserAgent
         end
       end
 
+      def web_browser?
+        true
+      end
+
       def webkit
         detect_product("AppleWebKit")
       end

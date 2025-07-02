@@ -15,6 +15,7 @@ shared_examples_for 'BeyondPod' do
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Mozilla/5.0 (Linux; U; en-us; BeyondPod 4)" do

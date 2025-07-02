@@ -21,6 +21,10 @@ class UserAgent
         GeckoBrowsers.detect { |browser| respond_to?(browser) } || super
       end
 
+      def web_browser?
+        true
+      end
+
       def version
         v = send(browser).version
         v.nil? ? super : v

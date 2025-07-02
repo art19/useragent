@@ -14,6 +14,7 @@ shared_examples 'DowncastCrawler' do
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_mobile }
   it { expect(useragent).not_to be_speaker }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: downcast feed consumer/0.0.177; (mode=dev; id=jQPkOYXFJT; downcast.fm)" do
