@@ -27,7 +27,7 @@ describe "UserAgent: nil" do
   it { expect(@useragent).not_to be_bot }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
-  it { expect(useragent).not_to be_web_browser }
+  it { expect(@useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: ''" do

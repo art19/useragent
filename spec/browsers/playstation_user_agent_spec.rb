@@ -15,7 +15,7 @@ shared_examples 'PlayStation 3' do
     expect(@useragent.mobile?).to be false
   end
 
-  it { expect(useragent).not_to be_web_browser }
+  it { expect(@useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Mozilla/5.0 (PLAYSTATION 3 4.75) AppleWebKit/531.22.8 (KHTML, like Gecko)" do

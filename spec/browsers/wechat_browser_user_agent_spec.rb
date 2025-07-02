@@ -23,7 +23,7 @@ describe "UserAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_1 like Mac OS X) Ap
     expect(@useragent.os).to eq("iOS 9.3.1")
   end
 
-  it { expect(useragent).to be_web_browser }
+  it { expect(@useragent).to be_web_browser }
 end
 
 describe "UserAgent: 'Mozilla/5.0 (Linux; Android 4.4.4; MI 4LTE Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile MQQBrowser/6.2 TBS/036215 Safari/537.36 MicroMessenger/6.3.16.49_r03ae324.780 NetType/WIFI Language/zh_CN'" do
