@@ -27,7 +27,7 @@ describe "UserAgent: nil" do
   it { expect(@useragent).not_to be_bot }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
-  it { expect(@useragent).not_to be_web_browser }
+  it { expect(@useragent).to be_web_browser }
 end
 
 describe "UserAgent: ''" do
@@ -55,6 +55,7 @@ describe "UserAgent: ''" do
   it { expect(@useragent).not_to be_bot }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).to be_web_browser }
 end
 
 describe "UserAgent: 'Mozilla/4.0 (compatible)'" do
@@ -82,6 +83,7 @@ describe "UserAgent: 'Mozilla/4.0 (compatible)'" do
   it { expect(@useragent).not_to be_bot }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).to be_web_browser }
 end
 
 describe "UserAgent: 'Mozilla/5.0'" do
@@ -109,6 +111,7 @@ describe "UserAgent: 'Mozilla/5.0'" do
   it { expect(@useragent).not_to be_bot }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).to be_web_browser }
 end
 
 describe "UserAgent: 'amaya/9.51 libwww/5.4.0'" do
@@ -127,6 +130,8 @@ describe "UserAgent: 'amaya/9.51 libwww/5.4.0'" do
   it "should return '5.4.0' as its libwww version" do
     expect(@useragent.libwww.version).to eq("5.4.0")
   end
+
+  it { expect(@useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: 'Rails Testing'" do
@@ -144,6 +149,7 @@ describe "UserAgent: 'Rails Testing'" do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: 'Python-urllib/2.7'" do
@@ -164,6 +170,7 @@ describe "UserAgent: 'Python-urllib/2.7'" do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: 'check_http/v1.4.15 (nagios-plugins 1.4.15)'" do
@@ -184,6 +191,7 @@ describe "UserAgent: 'check_http/v1.4.15 (nagios-plugins 1.4.15)'" do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_desktop }
+  it { expect(@useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: '/WebTest.pm'" do
@@ -194,4 +202,6 @@ describe "UserAgent: '/WebTest.pm'" do
   it "should return nil as its browser" do
     expect(@useragent.browser).to eq(nil)
   end
+
+  it { expect(@useragent).not_to be_web_browser }
 end
