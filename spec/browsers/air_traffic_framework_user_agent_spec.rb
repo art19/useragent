@@ -8,7 +8,7 @@ describe UserAgent::Browsers::AirTrafficFramework do
   shared_examples 'an ATC browser' do |version = nil|
     it { expect(user_agent.browser).to eql 'atc' }
     it { expect(user_agent).not_to be_bot }
-    it { expect(useragent).not_to be_web_browser }
+    it { expect(user_agent).not_to be_web_browser }
 
     if version
       it { expect(user_agent.version.to_s).to eql version }

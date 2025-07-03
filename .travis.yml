@@ -3,7 +3,7 @@ cache: bundler
 sudo: false
 
 before_install:
-  - gem update --system
+  - gem update --system 3.4.22 # locking to a version compatible with Ruby 3.0
   # Update bundler to the latest
   - gem install bundler
 
