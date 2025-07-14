@@ -28,6 +28,7 @@ shared_examples 'OkHttp' do |version, platform, os, type|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: okhttp/3.8.1" do

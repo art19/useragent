@@ -11,6 +11,7 @@ shared_examples_for "Vivaldi browser" do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(@useragent).to be_web_browser }
 end
 
 describe "UserAgent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36 Vivaldi/1.2.490.43'" do

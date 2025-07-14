@@ -15,6 +15,7 @@ shared_examples 'Amazon Echo' do |version|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_mobile }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe 'UserAgent: Echo/1.0(APNG)' do

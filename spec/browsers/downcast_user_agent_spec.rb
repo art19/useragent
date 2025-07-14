@@ -29,6 +29,7 @@ shared_examples_for 'Downcast' do |version, platform, os, type|
 
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Downcast/2.10.3 (iPhone; iOS 14.6; Scale/3.00)" do

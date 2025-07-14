@@ -19,6 +19,7 @@ shared_examples 'BlackBerry' do |version|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: BlackBerry8520/5.0.0.681 Profile/MIDP-2.1 Configuration/CLDC-1.1 VendorID/600" do

@@ -22,6 +22,10 @@ class UserAgent
       def browser
         'Samsung Internet Browser'
       end
+
+      def web_browser?
+        true
+      end
     end
   end
 end

@@ -15,6 +15,7 @@ shared_examples "iTunes" do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(@useragent).not_to be_web_browser }
 end
 
 shared_examples "iTunes runs on" do |platform, os|

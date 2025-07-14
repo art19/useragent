@@ -23,6 +23,7 @@ shared_examples_for 'iCatcher!' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: iCatcher!/6.7.5 (iPhone; iOS 14.5.1; Scale/2.0)" do

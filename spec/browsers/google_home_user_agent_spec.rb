@@ -23,6 +23,7 @@ shared_examples_for "Google Home" do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_mobile }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Mozilla/5.0 (Linux; Android 6.0.1; Build/M-MMB29M-rzs-us-sf-bld2-19HP-08.02.AM) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.41 Safari/537.36 CrKey/1.29.104695" do

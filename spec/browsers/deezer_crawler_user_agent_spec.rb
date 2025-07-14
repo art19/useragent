@@ -14,6 +14,7 @@ shared_examples 'DeezerCrawler' do
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_mobile }
   it { expect(useragent).not_to be_speaker }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Deezer Podcasters/1.0" do

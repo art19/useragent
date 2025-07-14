@@ -23,6 +23,7 @@ shared_examples_for 'Podcast Republic' do |version, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: PodcastRepublic/18.0 (Linux; U; Android 11;blueline/RQ2A.210505.002)" do

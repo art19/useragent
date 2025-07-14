@@ -29,6 +29,7 @@ shared_examples 'Deezer' do |version, platform, os, type|
 
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Deezer/6.2.28.73 (Android; 11; Mobile; fr) samsung SM-G973F" do

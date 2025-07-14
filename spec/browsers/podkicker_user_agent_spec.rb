@@ -23,6 +23,7 @@ shared_examples_for 'Podkicker' do |version|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Podkicker Pro/3.1.19.RC-GP-Pro(2028)" do

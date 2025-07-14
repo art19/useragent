@@ -90,6 +90,12 @@ class UserAgent
         end
       end
 
+      def web_browser?
+        return true if instance_of?(Webkit)
+
+        super
+      end
+
       def webkit
         if product_match = detect { |useragent| useragent.product =~ WEBKIT_PRODUCT_REGEXP }
           product_match

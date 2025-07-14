@@ -51,6 +51,10 @@ class UserAgent
         end
       end
 
+      def web_browser?
+        true
+      end
+
       private
 
       def os_comment

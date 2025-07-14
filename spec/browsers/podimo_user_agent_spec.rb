@@ -23,6 +23,7 @@ shared_examples_for 'Podimo' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Podimo/1.39.4 build 290/Android 30" do

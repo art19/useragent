@@ -23,6 +23,7 @@ shared_examples 'Podbean' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Podbean/Android App 8.5.1 (http://podbean.com),a3d7ec202761774354efde899ad29a6a" do

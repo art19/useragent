@@ -23,6 +23,7 @@ shared_examples_for 'Breaker' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Breaker/Android/1.0.0.RC-GP-Free(72) (72)" do

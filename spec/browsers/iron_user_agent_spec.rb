@@ -17,6 +17,7 @@ shared_examples 'a desktop' do
   it { expect(@useragent).not_to be_mobile }
   it { expect(@useragent).not_to be_speaker }
   it { expect(@useragent).not_to be_bot }
+  it { expect(@useragent).to be_web_browser }
 end
 
 # http://www.useragentstring.com/Iron22.0.2150.0_id_19368.php

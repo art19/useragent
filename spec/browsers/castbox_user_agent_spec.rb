@@ -23,6 +23,7 @@ shared_examples_for 'Castbox' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: CastBox/4.20 (fm.castbox.audiobook.radio.podcast; build:15; iOS 14.4.0)" do

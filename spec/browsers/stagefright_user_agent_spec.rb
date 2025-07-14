@@ -6,6 +6,8 @@ shared_examples 'Android platform' do
   it "returns 'Android' as its platform" do
     expect(useragent.platform).to eq('Android')
   end
+
+  it { expect(useragent).not_to be_web_browser }
 end
 
 shared_examples 'Stagefright' do

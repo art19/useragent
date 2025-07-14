@@ -23,6 +23,7 @@ shared_examples_for 'PodMN' do |version, platform, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: PodMN/Android 1.3.1 (Android 11; SM-G970U Build/RP1A.200720.012)" do

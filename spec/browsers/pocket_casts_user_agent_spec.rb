@@ -38,6 +38,7 @@ shared_examples 'Pocket Casts' do |version, platform, os, type|
   end
 
   it { expect(useragent).not_to be_speaker }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Pocket Casts BMID/E678F58F21" do

@@ -29,6 +29,7 @@ shared_examples 'Stitcher' do |version, platform, os, type|
 
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: Stitcher/iOS BMID/E675DDB007" do

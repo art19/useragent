@@ -30,6 +30,8 @@ shared_examples 'Apple Podcasts with details' do |version, platform, os|
     it { expect(useragent).not_to be_speaker }
     it { expect(useragent).not_to be_bot }
   end
+
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "%D8%A7%D9%84%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA/1430.27 CFNetwork/1150 Darwin/20.0.0" do

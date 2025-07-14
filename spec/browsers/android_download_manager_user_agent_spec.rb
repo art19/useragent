@@ -23,6 +23,7 @@ shared_examples_for 'AndroidDownloadManager' do |version, os|
   it { expect(useragent).not_to be_desktop }
   it { expect(useragent).not_to be_speaker }
   it { expect(useragent).not_to be_bot }
+  it { expect(useragent).not_to be_web_browser }
 end
 
 describe "UserAgent: AndroidDownloadManager/10 (Linux; U; Android 10; HMA-AL00 Build/HUAWEIHMA-AL00)" do
