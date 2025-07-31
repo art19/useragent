@@ -1,3 +1,6 @@
+# 1.5.5
+* Added `web_browser?` to existing browsers.
+
 # 1.5.4
 * Updated Operating Systems mappings `Darwin`
 
